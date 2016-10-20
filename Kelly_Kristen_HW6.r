@@ -47,7 +47,7 @@ HistoricalPrice_Plot <-ggplot(diamonds,aes(price)) + geom_histogram(aes(y=..dens
 HistoricalCarat_Plot <-ggplot(diamonds,aes(price)) + geom_histogram(aes(y=..density..,colour=factor(color)),binwidth=0.025) + theme(axis.title.x=element_blank(),axis.title.y=element_blank(),legend.position='none')
 #We print the histroical carat data
 
-ViewPort1 <-viewport(width=0.5,height=0.2,x=0.265y=0.15)	#This allows us to display the different grids
+ViewPort1 <-viewport(width=0.5,height=0.2,x=0.265,y=0.15)	#This allows us to display the different grids
 ViewPort2 <-viewport(width=0.5,height=0.2,x=0.8,y=0.75)		#This allows us to diplay the different grids
 
 print(DiamondPlot_Main)
