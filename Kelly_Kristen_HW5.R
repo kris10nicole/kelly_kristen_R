@@ -164,8 +164,29 @@ data("diamonds")
 PearsonCC(diamonds)
 
 
-#For problem number 9
+#For problem number 9, we want to have a program create and label a scatter plot for every pair
+#of numberic variables. We will add a title to the plot that contains the combined name of 
+#the pair from problem 8 and the calculated Pearson correlation coefficient of the pair.
 
+PearsonCC_Plot <-function(x)
+  #I created a function PearsonCC_Plot(), which accepts any dataframe as a parameter  
+  #Parameter: x, which is a DataFram
+  #The function will return a scatter plot for every pair of numeric variables along with a title
+  #of the plot.
+  {
+    PearsonCC(diamonds)  #Here we run the previous program PearsonCC to create the Pearson correlation coefficients
+  
+    for (i in 1:nrow(PearsonCC(diamonds)))   #We create a for loop to analyze the data created above
+      {        
+        A <-ggplot(data, aes(x = data[,combos[1,i]], y = data[,combos[2,i]])) + #This is the standard for of a scatterplot...i researched how to put this together and practiced with several versions
+        geom_point(size = 0.4) + 
+        ggtitle(paste(corr[i,1], corr[i,2], sep ='  r = ')) + xlab(combos[1,i]) + ylab(combos[2,i])
+        print(p)
+    }
+  }
+
+data("diamonds")
+PearsonCC_Plot(diamonds)
 
 
 
